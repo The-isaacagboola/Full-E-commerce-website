@@ -371,10 +371,12 @@ section .generic-section {
   margin-bottom: 3.75rem;
 }
 .products-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
   justify-content: center;
   align-items: center;
   margin-top: 2.5rem;
+  row-gap: 60px;
 }
 .product-image {
   display: flex;
@@ -388,6 +390,7 @@ section .generic-section {
 .product-item img {
   object-fit: scale-down;
   max-block-size: -webkit-fill-available;
+  max-height: 13rem;
 }
 .product-item {
   margin-right: 1.875rem;
@@ -441,6 +444,13 @@ section .generic-section {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.rating-count {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--clr-primary-black);
+  opacity: 50%;
 }
 
 .horizontal-seperator {
