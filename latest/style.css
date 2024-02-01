@@ -377,15 +377,19 @@ section .generic-section {
   align-items: center;
   margin-top: 2.5rem;
   row-gap: 60px;
+  z-index: 3;
 }
 .product-image {
   display: flex;
+  position: relative;
   width: 16.875rem;
   height: 15.625rem;
   background-color: var(--clr-secondary-ash);
   padding: 40px;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
 }
 .product-item img {
   object-fit: scale-down;
@@ -396,6 +400,45 @@ section .generic-section {
   margin-right: 1.875rem;
   align-items: center;
 }
+.add-to-cart-btn {
+  /* continue here */
+  position: absolute;
+  border: none;
+  background-color: var(--clr-primary-black);
+  color: var(--clr-primary-white);
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+  opacity: 100%;
+  z-index: 0;
+  transform: translateY(44px);
+}
+.product-item:focus .add-to-cart-btn {
+  opacity: 100%;
+  transform: translateY(0px);
+  transition: all 300ms ease-in-out;
+}
+.product-item:focus .product-image > img {
+  transform: translateY(-20px);
+}
+.wishlist-icon,
+.seen-icon {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 50%;
+}
+.responsive-icons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  top: 10px;
+  right: 10px;
+}
+
+/* stophere */
 .product-item .product-name,
 .product-item p {
   font-family: var(--ff-product-names-prices);
@@ -593,6 +636,26 @@ section .generic-section {
   filter: blur(50px);
 }
 
+/* PRODUCT EXPLORATION */
+.adjusted-product-detail {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.adjusted-product-detail img {
+  width: 6.25rem;
+  height: 1.25rem;
+}
+.adjusted-product-detail .rating-count {
+  bottom: -2px;
+}
+.adjusted-product-detail .discounted-price {
+  bottom: -2px;
+  position: relative;
+  padding-right: 0;
+}
+
 /* NEW ARRIVAL SECTION */
 
 .arrival-item {
@@ -601,6 +664,7 @@ section .generic-section {
   position: relative;
   display: flex;
   justify-content: center;
+  z-index: -6;
 }
 .grid-arrival-container {
   display: grid;
@@ -683,8 +747,22 @@ section .generic-section {
 .third-text,
 .fourth-text {
   row-gap: 8px;
+  bottom: 20px;
+  left: 20px;
 }
-
+.arrival-item.third > .bg-ecclipse,
+.arrival-item.fourth > .bg-ecclipse {
+  position: absolute;
+  width: auto;
+  height: 285px;
+  z-index: -2;
+}
+.arrival-item.third > .bottom-fix3 {
+  bottom: 32px;
+}
+.arrival-item.fourth > .bottom-fix4 {
+  bottom: 41px;
+}
 /* SERVICES SECTION */
 .service-item img {
   width: 80px;
