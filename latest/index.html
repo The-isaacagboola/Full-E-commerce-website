@@ -15,7 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
@@ -41,10 +41,10 @@
       </a>
 
       <ul class="nav-items">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Sign Up</a></li>
+        <li><a href="./sign-up.html">Sign Up</a></li>
       </ul>
 
       <div class="right-section">
@@ -67,15 +67,14 @@
       <div class="category-left">
         <ul class="category-list">
           <li>
-            <a href="#"
+            <a class="flex-for-arrow" href="#"
               >Women's Fashion
-              <img src="Images/icons/icons arrow-right.png" alt="" />
+              <img src="Images/icons/DropDown.png" alt="" />
             </a>
           </li>
           <li>
-            <a href="#"
-              >Men's Fashion
-              <img src="Images/icons/icons arrow-right.png" alt=""
+            <a class="flex-for-arrow" href="#"
+              >Men's Fashion <img src="Images/icons/DropDown.png" alt=""
             /></a>
           </li>
           <li><a href="#">Electronics </a></li>
@@ -164,6 +163,7 @@
               </div>
             </div>
             <img src="Images/products/g92-2-500x500 1.png" alt="game-pad" />
+            <div class="added-message"><span></span> Added</div>
             <button class="add-to-cart-btn">Add To Cart</button>
           </div>
           <p class="product-name">HAVIT HV-G92 Gamepad</p>
@@ -700,7 +700,7 @@
 
         <div>
           <p class="footer-section-name">Support</p>
-          <p class="footer-section-desc">
+          <p class="footer-section-desc support-desc">
             <span>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</span>
             <span>exclusive@gmail.com</span>
             <span>+88015-88888-9999</span>
@@ -727,8 +727,8 @@
         </div>
         <div>
           <p class="footer-section-name">Download App</p>
+          <p class="download-text">Save $3 with App New User Only</p>
           <div>
-            <p class="download-text">Save $3 with App New User Only</p>
             <div class="download-grid">
               <div class="qr-code-box">
                 <a href="#">
@@ -784,8 +784,13 @@
           </div>
         </div>
       </div>
-      <p><small> &copy; 2023 Isaac Agboola. All rights reserved.</small></p>
+
+      <div class="final-seperator"></div>
+
+      <div class="foot-note">
+        <p><small> &copy; 2024 Isaac Agboola. All rights reserved.</small></p>
+      </div>
     </footer>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>
