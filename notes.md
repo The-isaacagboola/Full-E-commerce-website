@@ -22,3 +22,61 @@ correct the input space in the nav-bar with right dimensions
 download and fix-up the social media icons in the footer
 
 effect the drop down account button in the nav
+
+/_ NAVigation Section _/
+nav {
+max-width: 1170px;
+margin: 0 auto;
+margin-bottom: 1rem;
+}
+
+.nav-container {
+display: flex;
+margin-top: 38px;
+justify-content: space-between;
+align-items: center;
+}
+.exclusive-logo {
+width: 118px;
+height: 24px;
+}
+.nav-container ul {
+list-style-type: none;
+display: flex;
+gap: 48px;
+font-family: var(--font-poppins);
+font-size: 1rem;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+}
+nav a {
+text-decoration: none;
+color: black;
+font-family: var(--font-poppins);
+font-size: 1rem;
+font-weight: 400;
+line-height: 24px;
+padding: 2px;
+}
+.nav-container .nav-items a:hover,
+.nav-container .nav-items a:focus {
+border-bottom: 1px solid rgb(150, 150, 150);
+}
+.line-divider {
+border-bottom: 1px solid hsla(0, 0%, 0%);
+opacity: 30%;
+}
+.right-section input {
+font-family: var(--font-poppins);
+font-size: 12px;
+line-height: 18px;
+font-weight: 400;
+background-color: var(--clr-secondary-ash);
+border: none;
+margin-left: 8px;
+width: 196px;
+border-radius: 4px;
+opacity: 50%;
+}

@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exclusive Cart</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles/log-in.css" />
-    <title>Log in to Exclusive</title>
+    <link rel="stylesheet" href="./styles/cart.css" />
   </head>
   <body>
     <header>
@@ -27,15 +27,16 @@
       </div>
     </header>
 
+    <!-- NAVIGATION -->
     <nav class="nav-container">
-      <a href="index.html">
+      <a href="logged-in.html">
         <div class="exclusive-logo">
           <img src="Images/Logo.png" alt="exclusive-logo" />
         </div>
       </a>
 
       <ul class="nav-items">
-        <li><a href="/latest/index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">About</a></li>
         <li><a href="./sign-up.html">Sign Up</a></li>
@@ -50,50 +51,117 @@
           />
           <img src="Images/icons/Component 2.png" alt="search icon" />
         </div>
+
+        <a href="wishlist.html">
+          <div class="number-relative-parent">
+            <span class="numbers-selected">2</span>
+            <img src="Images/icons/icon love.png" alt="favorite-items-icon" />
+          </div>
+        </a>
+
+        <a href="cart.html">
+          <div class="number-relative-parent">
+            <span class="numbers-selected">2</span>
+            <img src="Images/icons/icon Cart1.png" alt="cart icon" />
+          </div>
+        </a>
+        <!-- ACCOUNT DROPDOWN -->
+        <div class="account-icon dropdown" data-dropdown>
+          <div class="svg-container">
+            <svg
+              data-dropdown-button
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 27V24.3333C24 22.9188 23.5224 21.5623 22.6722 20.5621C21.8221 19.5619 20.669 19 19.4667 19H11.5333C10.331 19 9.17795 19.5619 8.32778 20.5621C7.47762 21.5623 7 22.9188 7 24.3333V27"
+                stroke="#FAFAFA"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16.5 14C18.9853 14 21 11.9853 21 9.5C21 7.01472 18.9853 5 16.5 5C14.0147 5 12 7.01472 12 9.5C12 11.9853 14.0147 14 16.5 14Z"
+                stroke="#FAFAFA"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="dropdown-menu">
+            <div class="flex-content">
+              <a href="">
+                <img src="Images/icons/usericon.png" alt="account" />
+                <p class="dropdown-section-name">Manage My Account</p>
+              </a>
+            </div>
+            <div class="flex-content">
+              <a href="">
+                <img src="Images/icons/icon-mallbag-white.png" alt="orders" />
+                <p class="dropdown-section-name">My Order</p>
+              </a>
+            </div>
+            <div class="flex-content">
+              <a href="">
+                <img
+                  src="Images/icons/icon-cancel-white.png"
+                  alt="Cancellations"
+                />
+                <p class="dropdown-section-name">My Cancellations</p>
+              </a>
+            </div>
+            <div class="flex-content">
+              <a href="">
+                <img src="Images/icons/Icon-Reviews-white.png" alt="reviews" />
+                <p class="dropdown-section-name">My Reviews</p>
+              </a>
+            </div>
+            <div class="flex-content">
+              <a href="">
+                <img src="Images/icons/Icon-logout-white.png" alt="logout" />
+                <p class="dropdown-section-name">Logout</p>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
-
     <div class="line-divider"></div>
 
-    <!-- MIDDLE SECTION -->
-    <section>
-      <div class="main-section">
-        <div class="image-container">
-          <img src="Images/products/dl.beatsnoop 1.png" alt="trademark image" />
+    <!-- Product SUmmary -->
+    <section class="generic-section">
+      <p>
+        <span class="fainted-text">Home / </span>
+        <span class="thick-text">Cart</span>
+      </p>
+
+      <div class="cart-summary-container">
+        <div class="cart-table-heading">
+          <p>Product</p>
+          <p>Price</p>
+          <p>Quantity</p>
+          <p>Subtotal</p>
         </div>
 
-        <div class="text-space">
-          <p class="main-heading">Log in to Exclusive</p>
-          <p class="sub-heading">Enter your details below</p>
-
-          <div class="input-container">
-            <input
-              type="text"
-              name="email-or-phone"
-              id="email-input"
-              placeholder="Email or Phone Number"
+        <div class="cart-item">
+          <div>
+            <img
+              src="./Images/products/g27cq4-500x500 1.png"
+              alt="Lcd monitor"
             />
-            <input
-              type="password"
-              name="password"
-              id="password-input"
-              placeholder="Password"
-            />
+            <p class="product-name">LCD Monitor</p>
           </div>
-
-          <div class="flex-buttons">
-            <button class="create-acct">
-              <a href="/latest/logged-in.html">Log In</a>
-            </button>
-            <p class="last-text">
-              <a href="/latest/log-in.html"> Forgot Password? </a>
-            </p>
-          </div>
+          <p class="present-price">$650</p>
+          <input type="number" name="item-quantity" />
+          <p class="Subtotal">$650</p>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <div class="footer-container">
         <div>
@@ -200,11 +268,13 @@
           </div>
         </div>
       </div>
+
       <div class="final-seperator"></div>
 
       <div class="foot-note">
         <p><small> &copy; 2024 Isaac Agboola. All rights reserved.</small></p>
       </div>
     </footer>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>

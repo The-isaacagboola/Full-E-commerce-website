@@ -163,7 +163,7 @@ nav a {
   border-bottom: 1px solid hsla(0, 0%, 0%);
   opacity: 30%;
 }
-.right-section input {
+.icon-section input {
   font-family: var(--font-poppins);
   font-size: 12px;
   line-height: 18px;
