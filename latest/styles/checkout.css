@@ -1,0 +1,117 @@
+@import url(./globals.css);
+@import url(./nav.css);
+@import url(./footer.css);
+
+.cart-address {
+  display: flex;
+  margin: 80px 0;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  color: var(--clr-primary-black);
+}
+.cart-address .fainted-text ol {
+  opacity: 0.5;
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  margin-right: 1rem;
+}
+.billing-heading {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 48px;
+}
+.billing-details,
+.info {
+  display: flex;
+  flex-direction: column;
+  max-width: 470px;
+}
+.info label,
+.info input {
+  padding-bottom: 8px;
+  opacity: 40%;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+}
+.info input {
+  border-radius: 4px;
+  background-color: hsla(0, 0%, 96%, 1);
+  border: none;
+  height: 50px;
+  margin-bottom: 32px;
+}
+.billing-details .info .red-star {
+  color: hsla(0, 68%, 56%, 1);
+}
+
+.billing-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cart-item-image {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  width: 54px;
+  height: 54px;
+  margin-right: 24px;
+}
+.cart-item .image-name-container img {
+  object-fit: cover;
+}
+.cart-item {
+  margin-bottom: 32px;
+}
+.cart-item,
+.image-name-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bill-payment {
+  max-width: 425px;
+  margin-top: 32px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+}
+.sub-details {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.card-logos {
+  display: flex;
+}
+.card-logos img {
+  width: 42px;
+  height: 28px;
+}
+.input-radios {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+.input-radios label {
+  margin-left: 1rem;
+}
+.input-radios input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  accent-color: black;
+}
+.justify-button {
+  display: flex;
+  align-items: center;
+}
+.payment-style {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 32px;
+}

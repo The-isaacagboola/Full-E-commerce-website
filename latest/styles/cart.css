@@ -1,3 +1,125 @@
 @import url(globals.css);
 @import url(./nav.css);
 @import url(footer.css);
+
+.cart-item-image {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  padding: 4px;
+  object-fit: cover;
+}
+.cart-table-heading,
+.cart-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  padding: 24px 40px;
+  box-shadow: 0px 1px 13px 0px hsla(0, 0%, 0%, 0.05);
+  margin-bottom: 40px;
+}
+.image-name-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.cart-address {
+  margin: 80px 0;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  color: var(--clr-primary-black);
+}
+.cart-address .fainted-text {
+  opacity: 0.5;
+}
+.cart-item input {
+  width: 72px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1.5px solid hsla(0, 0%, 0%, 0.4);
+}
+.cart-item-image button svg {
+  position: absolute;
+  top: 0;
+  left: -7px;
+}
+.cart-item-image button {
+  border: none;
+  cursor: pointer;
+}
+
+.cart-buttons button,
+.subtotal-container button {
+  border: 1px solid hsla(0, 0%, 0%, 0.5);
+  background: transparent;
+  border-radius: 4px;
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 16px 48px 16px 48px;
+  cursor: pointer;
+}
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.subtotal-container div input {
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 400;
+  width: 300px;
+  padding: 14px 24px;
+  opacity: 50%;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+.subtotal-container .red-button {
+  color: var(--clr-primary-white);
+  background-color: var(--clr-secondary-red);
+  border: var(--clr-secondary-red);
+  font-size: 16px;
+  cursor: pointer;
+}
+.subtotal-container a {
+  text-decoration: none;
+  color: inherit;
+}
+.subtotal-right-container {
+  border: 1.5px solid var(--clr-primary-black);
+  border-radius: 4px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 470px;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: var(--font-poppins);
+}
+.subtotal-heading {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+.subtotal-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 140px;
+}
+.sub-details {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.button-flex-parent {
+  display: flex;
+  justify-content: center;
+}

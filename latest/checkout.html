@@ -3,30 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exclusive Cart</title>
+    <title>Exclusive Checkout Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles/cart.css" />
+    <link
+      rel="stylesheet"
+      href="./styles/checkout.css
+    "
+    />
   </head>
   <body>
-    <header>
-      <div class="header-container">
-        <p class="header-text">
-          Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-          <span class="shopnow">ShopNow</span>
-        </p>
-        <select clasname="english">
-          <option value="">English</option>
-          <option value="">French</option>
-          <option value="">Spanish</option>
-        </select>
-      </div>
-    </header>
-
     <!-- NAVIGATION -->
     <nav class="nav-container">
       <a href="logged-in.html">
@@ -132,115 +122,145 @@
     </nav>
     <div class="line-divider"></div>
 
-    <!-- Product SUmmary -->
     <section class="generic-section">
-      <p class="cart-address">
-        <span class="fainted-text">Home / </span>
+      <div class="cart-address">
+        <div class="fainted-text">
+          <ol>
+            <li>Account</li>
+            <li>/</li>
+            <li>My Account</li>
+            <li>/</li>
+            <li>Product</li>
+            <li>/</li>
+            <li>View Cart</li>
+            <li>/</li>
+          </ol>
+        </div>
         Cart
-      </p>
-
-      <div class="cart-summary-container">
-        <div class="cart-table-heading">
-          <p>Product</p>
-          <p>Price</p>
-          <p>Quantity</p>
-          <p>Subtotal</p>
-        </div>
-
-        <div class="cart-item">
-          <div class="image-name-container">
-            <div class="cart-item-image">
-              <button>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="9" fill="#DB4444" />
-                  <path
-                    d="M9 15L12 12M15 9L11.9994 12M11.9994 12L9 9M12 12L15 15"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <img
-                src="./Images/products/g27cq4-500x500 1.png"
-                alt="Lcd monitor"
-              />
-            </div>
-            <p class="product-name">LCD Monitor</p>
-          </div>
-          <p class="present-price">$650</p>
-          <input type="number" name="item-quantity" value="01" />
-          <p class="Subtotal">$650</p>
-        </div>
-
-        <div class="cart-item">
-          <div class="image-name-container">
-            <div class="cart-item-image">
-              <button>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="9" fill="#DB4444" />
-                  <path
-                    d="M9 15L12 12M15 9L11.9994 12M11.9994 12L9 9M12 12L15 15"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <img
-                src="./Images/products/g92-2-500x500 1.png"
-                alt="H1 Gamepad"
-              />
-            </div>
-            <p class="product-name">H1 Gamepad</p>
-          </div>
-          <p class="present-price">$550</p>
-          <input type="number" name="item-quantity" value="02" />
-          <p class="Subtotal">$1100</p>
-        </div>
-      </div>
-      <div class="cart-buttons">
-        <button>Return To Shop</button>
-        <button>Update Cart</button>
       </div>
 
-      <div class="subtotal-container">
+      <p class="billing-heading">Billing Details</p>
+
+      <div class="billing-container">
+        <div class="billing-details">
+          <div class="info">
+            <label for="first">First Name</label>
+            <input type="text" name="first" placeholder="" />
+          </div>
+          <div class="info">
+            <label for="second">Company Name</label>
+            <input type="text" name="second" placeholder="" />
+          </div>
+          <div class="info">
+            <label for="third"
+              >Street Address<span class="red-star">*</span></label
+            >
+            <input type="text" name="third" placeholder="" />
+          </div>
+          <div class="info">
+            <label for="four">Apartment, floor, e.t.c (optional)</label>
+            <input type="text" name="four" placeholder="" />
+          </div>
+          <div class="info">
+            <label for="five">Town/City<span class="red-star">*</span></label>
+            <input type="text" name="five" placeholder="" />
+          </div>
+          <div class="info">
+            <label for="six">Phone Number<span class="red-star">*</span></label>
+            <input type="text" name="six" placeholder="" />
+          </div>
+          <div class="info">
+            <label for="email"
+              >Email Address<span class="red-star">*</span></label
+            >
+            <input type="text" name="email" placeholder="" />
+          </div>
+
+          <div>
+            <input type="checkbox" name="save-details" id="save-infos" />
+            <label for="save-details"
+              >Save this information for faster check-out next time</label
+            >
+          </div>
+        </div>
+
         <div>
-          <input type="text" id="coupon-input" placeholder="Coupon Code" />
-          <button class="red-button">Apply Coupon</button>
-        </div>
-        <div class="subtotal-right-container">
-          <p class="subtotal-heading">Cart Total</p>
-          <p class="sub-details">
-            Subtotal <span class="sub-price">$1750</span>
-          </p>
+          <div class="bill-payment">
+            <div class="cart-item">
+              <div class="image-name-container">
+                <div class="cart-item-image">
+                  <img
+                    src="./Images/products/g27cq4-500x500 1.png"
+                    alt="Lcd monitor"
+                  />
+                </div>
+                <p class="product-name">LCD Monitor</p>
+              </div>
+              <p class="Subtotal">$650</p>
+            </div>
 
-          <div class="line-divider"></div>
+            <div class="cart-item">
+              <div class="image-name-container">
+                <div class="cart-item-image">
+                  <img
+                    src="./Images/products/g92-2-500x500 1.png"
+                    alt="H1 Gamepad"
+                  />
+                </div>
+                <p class="product-name">H1 Gamepad</p>
+              </div>
+              <p class="Subtotal">$1100</p>
+            </div>
 
-          <p class="sub-details">Shipping <span>Free</span></p>
+            <p class="sub-details">
+              Subtotal <span class="sub-price">$1750</span>
+            </p>
 
-          <div class="line-divider"></div>
+            <div class="line-divider"></div>
 
-          <p class="sub-details">Total <span>$1750</span></p>
-          <div class="button-flex-parent">
-            <button class="red-button checkout-button">
-              <a href="./checkout.html">Process to checkout</a>
-            </button>
+            <p class="sub-details">Shipping <span>Free</span></p>
+
+            <div class="line-divider"></div>
+
+            <p class="sub-details">Total <span>$1750</span></p>
+
+            <div class="payment-style">
+              <div class="input-radios">
+                <div class="justify-button">
+                  <input
+                    type="radio"
+                    id="html"
+                    name="payment-style"
+                    value="Bank"
+                  />
+                  <label for="Bank">Bank</label>
+                </div>
+
+                <div class="justify-button">
+                  <input
+                    type="radio"
+                    id="cash-delivery"
+                    name="payment-style"
+                    value="cash"
+                  />
+                  <label for="cash">Cash on delivery</label>
+                </div>
+              </div>
+
+              <div class="card-logos">
+                <img src="Images/cards/Bkash.png" alt="Bkash" />
+                <img src="Images/cards/Visa.png" alt="Visa" />
+                <img src="Images/cards/Mastercard.png" alt="Mastercard" />
+                <img src="Images/cards/Nagad.png" alt="Nagad" />
+              </div>
+            </div>
           </div>
+
+          <div>
+            <input type="text" placeholder="Coupon Code" />
+            <button>Apply Coupon</button>
+          </div>
+          <button>Place Order</button>
         </div>
       </div>
     </section>
@@ -358,6 +378,5 @@
         <p><small> &copy; 2024 Isaac Agboola. All rights reserved.</small></p>
       </div>
     </footer>
-    <script src="./scripts/main.js"></script>
   </body>
 </html>
