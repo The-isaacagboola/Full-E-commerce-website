@@ -50,6 +50,7 @@
 .billing-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 140px;
 }
 .cart-item-image {
   display: flex;
@@ -85,6 +86,7 @@
 }
 .card-logos {
   display: flex;
+  gap: 8px;
 }
 .card-logos img {
   width: 42px;
@@ -114,4 +116,47 @@
   font-weight: 400;
   font-size: 1rem;
   margin-top: 32px;
+}
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--clr-secondary-red);
+}
+input[type="checkbox"] ~ label {
+  font-size: 1rem;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+}
+.checkbox-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#coupon-buttons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+#coupon-buttons input {
+  opacity: 50%;
+  width: 300px;
+  padding: 16px 24px;
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid hsla(0, 0%, 0%, 1);
+}
+#payment-wrapper {
+  max-width: 530px;
+}
+#payment-wrapper button {
+  padding: 16px 48px;
+  background-color: var(--clr-secondary-red);
+  color: var(--clr-primary-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-poppins);
+  font-weight: 400;
 }
