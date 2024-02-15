@@ -1,0 +1,63 @@
+@import url(./globals.css);
+@import url(./nav.css);
+@import url(./footer.css);
+
+.cart-address {
+  margin: 80px 0;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  color: var(--clr-primary-black);
+}
+.cart-address .fainted-text {
+  opacity: 0.5;
+}
+
+body {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 16px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+}
+.left-container {
+  padding: 40px 35px;
+}
+.line-divider {
+  margin: 30px 0;
+}
+.call-write-box {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.call-write-box img {
+  width: 40px;
+  height: 40px;
+}
+.call-write-box p {
+  padding: 8px 16px;
+}
+.compartment > p {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 14px;
+}
+
+.right-container {
+  padding: 40px 32px;
+}
+.top-input {
+  display: flex;
+  justify-content: space-between;
+}
+.top-input input {
+  opacity: 50%;
+  border: none;
+  padding: 13px 16px;
+  width: 235px;
+  background-color: hsla(0, 0%, 96%, 1);
+}
