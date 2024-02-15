@@ -54,7 +54,6 @@ section {
   font-size: 1rem;
   border: 1px solid hsla(0, 0%, 0%, 0.3);
   border-radius: 4px;
-  row-gap: 1rem;
   cursor: pointer;
 }
 .category-div:hover {
@@ -62,11 +61,12 @@ section {
   color: var(--clr-primary-white);
   transition: all 300ms ease-in-out;
 }
-.category-div:hover img {
-  filter: invert(100%) sepia(2%) saturate(2%) hue-rotate(292deg)
-    brightness(105%) contrast(96%);
-  background-color: transparent;
+.category-div:hover svg path {
+  fill: black;
+  stroke: white;
+  accent-color: white;
   transition: all 300ms ease-in-out;
+  background: transparent;
 }
 .category-div svg {
   background-color: transparent;
@@ -83,4 +83,74 @@ section {
   fill: #2f2e30;
   stroke: white;
   color: white;
+}
+
+/* EXECUTIVES */
+.executive-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 140px;
+}
+.executives img {
+  width: 370px;
+  height: 430px;
+  object-fit: cover;
+  margin-bottom: 32px;
+}
+.executive-name {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 32px;
+}
+.position {
+  font-family: inherit;
+  margin-bottom: 16px;
+}
+.connect {
+  display: flex;
+  gap: 1rem;
+}
+.category-name {
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 32px;
+  margin-top: 24px;
+}
+
+/* SERVICES */
+
+.service-item img {
+  width: 80px;
+  height: 80px;
+}
+.service-item {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-poppins);
+  justify-content: center;
+  align-items: center;
+}
+.service-name {
+  font-weight: 600;
+  font-size: 20px;
+}
+.service-desc {
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.service-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.services-flex {
+  margin: 140px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 942px;
 }
