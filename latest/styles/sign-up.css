@@ -212,7 +212,14 @@ nav a {
 .text-space {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
+}
+.text-space a {
+  text-decoration: none;
+  width: 100%;
+}
+.text-space a button {
+  width: 100%;
 }
 .input-container {
   display: flex;
@@ -280,6 +287,7 @@ nav a {
   color: var(--clr-primary-black);
   opacity: 70%;
   text-decoration: none;
+  margin-left: 1rem;
 }
 .last-text a:hover {
   border-bottom: 1px solid hsla(0, 0%, 0%, 1);
