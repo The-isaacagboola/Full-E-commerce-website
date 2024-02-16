@@ -1,8 +1,8 @@
 import { products } from "./data/products.js";
 import { handleFlashsale } from "./data/flashsales.js";
 import { handleBestselling } from "./data/bestsellingProducts.js";
-import {cart, saveToLocal} from "./data/products.js"
-
+import { cart, saveToLocal } from "./data/products.js";
+import { updateCartQuantity } from "./data/utils.js";
 
 let generalProductHTML = "";
 function handleGeneralProduct(product) {
@@ -36,7 +36,7 @@ function handleGeneralProduct(product) {
   document.querySelector(".js-general-container").innerHTML =
     generalProductHTML;
 }
-
+updateCartQuantity();
 products.forEach((product) => {
   let generalProduct;
   let flashsaleProduct;
@@ -52,7 +52,6 @@ products.forEach((product) => {
     handleBestselling(bestsellingProduct);
   }
 });
-
 
 const addtoCartButtons = document.querySelectorAll(".js-add-to-cart");
 console.log(addtoCartButtons);
@@ -75,5 +74,6 @@ addtoCartButtons.forEach((button) => {
     cart.push(activeProduct);
     saveToLocal();
     console.log(cart);
+    updateCartQuantity();
   });
 });

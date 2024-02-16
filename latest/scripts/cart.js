@@ -1,5 +1,5 @@
 import { cart } from "./data/products.js";
-
+import { updateCartQuantity } from "./data/utils.js";
 let cartHTML = "";
 export function updateCart() {
   cart.forEach((item) => {
@@ -38,8 +38,6 @@ export function updateCart() {
     cartHTML += html;
     document.querySelector(".js-cart-item-container").innerHTML = cartHTML;
   });
-
+  updateCartQuantity();
 }
 updateCart();
-
-
