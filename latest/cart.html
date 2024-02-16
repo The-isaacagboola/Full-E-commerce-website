@@ -147,71 +147,7 @@
           <p>Subtotal</p>
         </div>
 
-        <div class="cart-item">
-          <div class="image-name-container">
-            <div class="cart-item-image">
-              <button>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="9" fill="#DB4444" />
-                  <path
-                    d="M9 15L12 12M15 9L11.9994 12M11.9994 12L9 9M12 12L15 15"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <img
-                src="./Images/products/g27cq4-500x500 1.png"
-                alt="Lcd monitor"
-              />
-            </div>
-            <p class="product-name">LCD Monitor</p>
-          </div>
-          <p class="present-price">$650</p>
-          <input type="number" name="item-quantity" value="01" />
-          <p class="Subtotal">$650</p>
-        </div>
-
-        <div class="cart-item">
-          <div class="image-name-container">
-            <div class="cart-item-image">
-              <button>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="9" fill="#DB4444" />
-                  <path
-                    d="M9 15L12 12M15 9L11.9994 12M11.9994 12L9 9M12 12L15 15"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <img
-                src="./Images/products/g92-2-500x500 1.png"
-                alt="H1 Gamepad"
-              />
-            </div>
-            <p class="product-name">H1 Gamepad</p>
-          </div>
-          <p class="present-price">$550</p>
-          <input type="number" name="item-quantity" value="02" />
-          <p class="Subtotal">$1100</p>
-        </div>
+        <div class="js-cart-item-container"></div>
       </div>
       <div class="cart-buttons">
         <button>Return To Shop</button>
@@ -359,6 +295,6 @@
       </div>
     </footer>
     <script src="./scripts/shared.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/cart.js"></script>
   </body>
 </html>

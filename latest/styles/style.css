@@ -285,6 +285,10 @@
   font-size: 11px;
   height: 18px;
 }
+.time-days,
+.time-number {
+  text-align: center;
+}
 .text-box > .timer-container {
   justify-content: left;
 }
