@@ -58,7 +58,6 @@ console.log(addtoCartButtons);
 
 addtoCartButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    //show the added display
     let productId;
     console.log(button.dataset);
     productId = button.dataset.productid;
@@ -73,7 +72,13 @@ addtoCartButtons.forEach((button) => {
 
     cart.push(activeProduct);
     saveToLocal();
-    console.log(cart);
     updateCartQuantity();
+
+    //show the added display
+    const container = button.closest(".product-image");
+    container.querySelector(".added-message").classList.add("active");
+    setTimeout(() => {
+      container.querySelector(".added-message").classList.remove("active");
+    }, 2000);
   });
 });

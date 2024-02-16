@@ -58,7 +58,7 @@ section .generic-section {
   right: 15px;
   opacity: 0;
 }
-.added-message .active {
+.added-message.active {
   opacity: 100%;
 }
 .added-message > span {
