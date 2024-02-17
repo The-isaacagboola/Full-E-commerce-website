@@ -54,14 +54,26 @@ function updateSubtotal() {
       }
     });
 
+    if (Number(item.querySelector(".js-input-quantity").value) < 1) {
+      item.querySelector(".js-input-quantity").value = 0;
+    }
+
     item.querySelector(".js-subtotal").innerHTML =
       matchingItem.presentPrice *
       Number(item.querySelector(".js-input-quantity").value);
+
+    const inputs = document.querySelectorAll(".js-input-quantity");
+
+    inputs.forEach((input) => {
+      let value = parseFloat(input.value);
+
+      input.value = value.toFixed(0).padStart(2, "0");
+    });
   });
 }
 
 document.querySelectorAll(".js-input-quantity").forEach((input) => {
-  input.addEventListener("click", () => {
+  input.addEventListener("input", () => {
     updateSubtotal();
   });
 });
