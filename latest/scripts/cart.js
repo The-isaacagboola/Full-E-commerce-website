@@ -43,18 +43,25 @@ export function updateCart() {
 updateCart();
 
 function updateSubtotal() {
-  cart.forEach(() => {
-    const items = document.querySelectorAll(".js-cart-item");
-    console.log(items);
+  const items = document.querySelectorAll(".js-cart-item");
 
-    items.forEach((product) => {
-      /*
-      item.querySelector(".js-subtotal").innerHTML =
-        Number(item.querySelector(".present-price").innerHTML) *
-        Number(item.querySelector(".js-input-quantity").value);
-        */
-      console.log(product.querySelector(".js-subtotal").innerHTML);
+  items.forEach((item) => {
+    const itemId = item.dataset.productid;
+    let matchingItem;
+    cart.forEach((product) => {
+      if (product.id === itemId) {
+        matchingItem = product;
+      }
     });
+
+    item.querySelector(".js-subtotal").innerHTML =
+      matchingItem.presentPrice *
+      Number(item.querySelector(".js-input-quantity").value);
   });
 }
-updateSubtotal();
+
+document.querySelectorAll(".js-input-quantity").forEach((input) => {
+  input.addEventListener("click", () => {
+    updateSubtotal();
+  });
+});
