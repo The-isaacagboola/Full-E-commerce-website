@@ -30,7 +30,7 @@ export function updateCart() {
     </div>
     <p class="product-name">${item.name}</p>
   </div>
-  <p class="present-price">$${item.presentPrice}</p>
+  <p class="js-present-price">$${item.presentPrice}</p>
   <input class="js-input-quantity" type="number" name="item-quantity" value="01" />
   <p class="js-subtotal">$${item.presentPrice}</p>
 </div>
@@ -41,6 +41,7 @@ export function updateCart() {
   updateCartQuantity();
 }
 updateCart();
+addSubtotals();
 
 function updateSubtotal() {
   const items = document.querySelectorAll(".js-cart-item");
@@ -58,9 +59,10 @@ function updateSubtotal() {
       item.querySelector(".js-input-quantity").value = 0;
     }
 
-    item.querySelector(".js-subtotal").innerHTML =
+    item.querySelector(".js-subtotal").innerHTML = `$${
       matchingItem.presentPrice *
-      Number(item.querySelector(".js-input-quantity").value);
+      Number(item.querySelector(".js-input-quantity").value)
+    }`;
 
     const inputs = document.querySelectorAll(".js-input-quantity");
 
@@ -75,5 +77,37 @@ function updateSubtotal() {
 document.querySelectorAll(".js-input-quantity").forEach((input) => {
   input.addEventListener("input", () => {
     updateSubtotal();
+    addSubtotals();
   });
 });
+
+function addSubtotals() {
+  const prices = document.querySelectorAll(".js-subtotal");
+
+  let subtotalAccumulator = 0;
+
+  prices.forEach((price) => {
+    String(
+      (subtotalAccumulator += Number(price.innerHTML.split("$").join("")))
+    );
+  });
+
+  const subTotalAmount = (document.querySelector(
+    ".js-subtotal-price"
+  ).innerHTML = `$${subtotalAccumulator}`);
+
+  if (document.querySelector(".js-shipping-fee").innerHTML === "Free") {
+    document.querySelector(".js-sumtotal").innerHTML = subTotalAmount;
+  } else {
+    document.querySelector(".js-sumtotal").innerHTML = `
+      $${
+        Number(subTotalAmount.split("$").join("")) +
+        Number(
+          document
+            .querySelector(".js-shipping-fee")
+            .innerHTML.split("$")
+            .join("")
+        )
+      }`;
+  }
+}

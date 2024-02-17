@@ -150,8 +150,12 @@
         <div class="js-cart-item-container"></div>
       </div>
       <div class="cart-buttons">
-        <button>Return To Shop</button>
-        <button>Update Cart</button>
+        <a href="./logged-in.html#productscenter">
+          <button>Return To Shop</button>
+        </a>
+        <a href="">
+          <button>Update Cart</button>
+        </a>
       </div>
 
       <div class="subtotal-container">
@@ -162,16 +166,20 @@
         <div class="subtotal-right-container">
           <p class="subtotal-heading">Cart Total</p>
           <p class="sub-details">
-            Subtotal <span class="sub-price">$1750</span>
+            Subtotal <span class="js-subtotal-price">$1750</span>
           </p>
 
           <div class="line-divider"></div>
 
-          <p class="sub-details">Shipping <span>Free</span></p>
+          <p class="sub-details">
+            Shipping <span class="js-shipping-fee">$200</span>
+          </p>
 
           <div class="line-divider"></div>
 
-          <p class="sub-details">Total <span>$1750</span></p>
+          <p class="sub-details">
+            Total <span class="js-sumtotal">$1750</span>
+          </p>
           <div class="button-flex-parent">
             <button class="red-button checkout-button">
               <a href="./checkout.html">Process to checkout</a>
