@@ -5,7 +5,7 @@ export function updateCart() {
   cart.forEach((item) => {
     let html;
     html = `
-    <div class="cart-item">
+    <div class="cart-item js-cart-item" data-productId=${item.id}>
   <div class="image-name-container">
     <div class="cart-item-image">
       <button data-productId=${item.id}>
@@ -31,8 +31,8 @@ export function updateCart() {
     <p class="product-name">${item.name}</p>
   </div>
   <p class="present-price">$${item.presentPrice}</p>
-  <input type="number" name="item-quantity" value="01" />
-  <p class="Subtotal">$${item.presentPrice}</p>
+  <input class="js-input-quantity" type="number" name="item-quantity" value="01" />
+  <p class="js-subtotal">$${item.presentPrice}</p>
 </div>
     `;
     cartHTML += html;
@@ -41,3 +41,20 @@ export function updateCart() {
   updateCartQuantity();
 }
 updateCart();
+
+function updateSubtotal() {
+  cart.forEach(() => {
+    const items = document.querySelectorAll(".js-cart-item");
+    console.log(items);
+
+    items.forEach((product) => {
+      /*
+      item.querySelector(".js-subtotal").innerHTML =
+        Number(item.querySelector(".present-price").innerHTML) *
+        Number(item.querySelector(".js-input-quantity").value);
+        */
+      console.log(product.querySelector(".js-subtotal").innerHTML);
+    });
+  });
+}
+updateSubtotal();

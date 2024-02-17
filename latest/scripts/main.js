@@ -2,7 +2,7 @@ import { products } from "./data/products.js";
 import { handleFlashsale } from "./data/flashsales.js";
 import { handleBestselling } from "./data/bestsellingProducts.js";
 import { cart, saveToLocal } from "./data/products.js";
-import { updateCartQuantity } from "./data/utils.js";
+import { displayAdded, updateCartQuantity } from "./data/utils.js";
 
 let generalProductHTML = "";
 function handleGeneralProduct(product) {
@@ -77,11 +77,6 @@ addtoCartButtons.forEach((button) => {
     saveToLocal();
     updateCartQuantity();
 
-    //show the added display
-    const container = button.closest(".product-image");
-    container.querySelector(".added-message").classList.add("active");
-    setTimeout(() => {
-      container.querySelector(".added-message").classList.remove("active");
-    }, 2000);
+    displayAdded(button);
   });
 });
