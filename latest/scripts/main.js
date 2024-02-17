@@ -70,7 +70,10 @@ addtoCartButtons.forEach((button) => {
       }
     });
 
-    cart.push(activeProduct);
+    if (!cart.some((product) => product.id === activeProduct.id)) {
+      cart.push(activeProduct);
+    }
+
     saveToLocal();
     updateCartQuantity();
 

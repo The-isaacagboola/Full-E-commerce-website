@@ -25,6 +25,21 @@
   z-index: 0;
   cursor: pointer;
 }
+.add-in-delete:hover {
+  cursor: pointer;
+  background-color: var(--clr-secondary-red);
+  color: var(--clr-primary-white);
+}
+.delete-icon:hover,
+.quickview-icon:hover {
+  background-color: var(--clr-secondary-red);
+}
+.delete-icon:hover svg path,
+.quickview-icon:hover svg path {
+  fill: var(--clr-secondary-red);
+  stroke: white;
+}
+
 .wishlist-heading {
   display: flex;
   justify-content: space-between;
@@ -66,7 +81,8 @@
   font-weight: 400;
   padding-left: 16px;
 }
-.wish-view-all {
+.wish-view-all,
+#move-all {
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
@@ -74,6 +90,11 @@
   border: 1px solid hsla(0, 0%, 0%, 0.5);
   background: transparent;
   border-radius: 4px;
+}
+.wish-view-all:hover,
+#move-all:hover {
+  color: var(--clr-primary-white);
+  background-color: #1e3839;
 }
 .wishlist-middle-container {
   display: flex;
