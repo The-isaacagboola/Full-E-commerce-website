@@ -261,7 +261,7 @@ addToCartButtons.forEach((button) => {
     displayAdded(button);
   });
 });
-
+/*
 document.querySelector("body").addEventListener("click", (e) => {
   if (e.target.closest(".js-delete-icon") !== null) {
     const deleteContainer = e.target.closest(".js-delete-icon");
@@ -270,10 +270,36 @@ document.querySelector("body").addEventListener("click", (e) => {
     wishlist.forEach((item, index) => {
       if (item.id === deletedItemId) {
         wishlist.splice(index, 1);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        updateCartWishQuantity();
+
         console.log(wishlist);
-        wishHTML.remove(deleteContainer);
         renderWIshList();
       }
+      deleteContainer.remove();
     });
   }
+});
+*/
+
+document.querySelector("body").addEventListener("click", (e) => {
+  if (e.target.closest(".js-delete-icon") !== null) {
+    const deleteContainer = e.target.closest(".js-delete-icon");
+    console.log(deleteContainer);
+    const deletedItemId = deleteContainer.dataset.productid;
+
+    wishlist.forEach((item, index) => {
+      if (item.id === deletedItemId) {
+        wishlist.splice(index, 1);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        updateCartWishQuantity();
+        wishHTML.replace(deleteContainer, "");
+        console.log(wishlist);
+      }
+    });
+    // Remove the deleteContainer element from the DOM
+    deleteContainer.remove();
+  }
+
+  renderWIshList();
 });
