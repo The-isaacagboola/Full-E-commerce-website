@@ -4,7 +4,7 @@ export function handleBestselling(product) {
   bestHtml = ` <div class="product-item">
   <div class="product-image">
     <div class="responsive-icons">
-      <div class="wishlist-icon">
+      <div class="wishlist-icon js-wishlist-icon" data-productId=${product.id}>
         <img src="Images/icons/icon love.png" alt="add-to-wishlist" />
       </div>
 

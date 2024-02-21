@@ -1,74 +1,13 @@
 import { cart } from "./data/products.js";
-import { products, saveToLocal } from "./data/products.js";
+import { products, saveToLocal, wishlist } from "./data/products.js";
 import { displayAdded } from "./data/utils.js";
 
-function updateCartQuantity() {
+function updateCartWishQuantity() {
   document.querySelector(".js-cart-quantity").innerHTML = cart.length;
-}
-
-export function updateWishlistQuantity() {
   document.querySelector(".js-wishlist-quantity").innerHTML = wishlist.length;
+  document.querySelector(".wishlist-number").innerHTML = wishlist.length;
 }
-updateCartQuantity();
-
-export let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [
-  {
-    id: "b2",
-    category: "best-selling",
-    image: `<img
-        src="Images/products/547953_9C2ST_8746_001_082_0000_Light-Gucci-Savoy-medium-duffle-bag 1.png"
-        alt="bag"
-      />`,
-    name: "Guchi Duffle Bag",
-    presentPrice: 960,
-    formerPrice: 1160,
-    rating: {
-      stars: 5,
-      count: 65,
-    },
-  },
-  {
-    id: "p5",
-    category: "general",
-    image: `<img
-        src="Images/products/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png"
-        alt="elctric car"
-      />`,
-    name: "Kids Electric Car",
-    presentPrice: 960,
-    rating: {
-      stars: 5,
-      count: 65,
-    },
-  },
-  {
-    id: "p7",
-    category: "general",
-    image: `<img src="Images/products/GP11_PRD3 1.png" alt="Gamepad" />`,
-    name: "GP11 Shooter USB Gamepad",
-    presentPrice: 660,
-    rating: {
-      stars: 5,
-      count: 55,
-    },
-  },
-  {
-    id: "p8",
-    category: "general",
-    image: `<img
-        src="Images/products/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png"
-        alt="Satin Jacket"
-      />`,
-    name: "Quilted Satin Jacket",
-    presentPrice: 660,
-    rating: {
-      stars: 5,
-      count: 55,
-    },
-  },
-];
-localStorage.setItem("wishlist", JSON.stringify(wishlist));
-updateWishlistQuantity();
+updateCartWishQuantity();
 
 let wishHTML;
 let itemHtml;
@@ -78,7 +17,7 @@ wishlist.forEach((item) => {
         <div class="product-image">
             <div class="flash-sale-number">-45%</div>
             <div class="responsive-icons">
-                <div class="delete-icon">
+                <div class="delete-icon js-delete-icon" data-productId=${item.id}>
                     <svg
                         width="24"
                         height="24"
@@ -148,8 +87,11 @@ wishlist.forEach((item) => {
     `;
   wishHTML += itemHtml;
   wishHTML = wishHTML.split("undefined").join("");
-  document.querySelector(".js-wishlist-container").innerHTML = wishHTML;
 });
+function renderWIshList() {
+  document.querySelector(".js-wishlist-container").innerHTML = wishHTML;
+}
+renderWIshList();
 
 let justForYouObjects = [
   {
@@ -298,9 +240,8 @@ justForYouObjects.forEach((object) => {
   document.querySelector(".js-just-foryou").innerHTML = newJustHTML;
 });
 
-const addButtons = document.querySelectorAll(".js-add-to-cart");
-
-addButtons.forEach((button) => {
+const addToCartButtons = document.querySelectorAll(".js-add-to-cart");
+addToCartButtons.forEach((button) => {
   button.addEventListener("click", () => {
     let itemId;
     itemId = button.dataset.objectid;
@@ -314,9 +255,25 @@ addButtons.forEach((button) => {
 
     if (!cart.some((product) => product.id === targetItem.id)) {
       cart.push(targetItem);
-      updateCartQuantity();
+      updateCartWishQuantity();
       saveToLocal();
     }
     displayAdded(button);
   });
+});
+
+document.querySelector("body").addEventListener("click", (e) => {
+  if (e.target.closest(".js-delete-icon") !== null) {
+    const deleteContainer = e.target.closest(".js-delete-icon");
+    const deletedItemId = deleteContainer.dataset.productid;
+
+    wishlist.forEach((item, index) => {
+      if (item.id === deletedItemId) {
+        wishlist.splice(index, 1);
+        console.log(wishlist);
+        wishHTML.remove(deleteContainer);
+        renderWIshList();
+      }
+    });
+  }
 });

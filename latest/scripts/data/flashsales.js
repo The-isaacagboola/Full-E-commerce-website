@@ -6,7 +6,7 @@ export function handleFlashsale(product) {
     <div class="product-image">
       <div class="flash-sale-number">-${product.flashsaleNumber}%</div>
       <div class="responsive-icons">
-        <div class="wishlist-icon">
+        <div class="wishlist-icon js-wishlist-icon" data-productId=${product.id}>
           <img src="Images/icons/icon love.png" alt="add-to-wishlist" />
         </div>
 

@@ -256,3 +256,61 @@ saveToLocal();
 export function saveToLocal() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+export let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [
+  {
+    id: "b2",
+    category: "best-selling",
+    image: `<img
+        src="Images/products/547953_9C2ST_8746_001_082_0000_Light-Gucci-Savoy-medium-duffle-bag 1.png"
+        alt="bag"
+      />`,
+    name: "Guchi Duffle Bag",
+    presentPrice: 960,
+    formerPrice: 1160,
+    rating: {
+      stars: 5,
+      count: 65,
+    },
+  },
+  {
+    id: "p5",
+    category: "general",
+    image: `<img
+        src="Images/products/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png"
+        alt="elctric car"
+      />`,
+    name: "Kids Electric Car",
+    presentPrice: 960,
+    rating: {
+      stars: 5,
+      count: 65,
+    },
+  },
+  {
+    id: "p7",
+    category: "general",
+    image: `<img src="Images/products/GP11_PRD3 1.png" alt="Gamepad" />`,
+    name: "GP11 Shooter USB Gamepad",
+    presentPrice: 660,
+    rating: {
+      stars: 5,
+      count: 55,
+    },
+  },
+  {
+    id: "p8",
+    category: "general",
+    image: `<img
+        src="Images/products/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png"
+        alt="Satin Jacket"
+      />`,
+    name: "Quilted Satin Jacket",
+    presentPrice: 660,
+    rating: {
+      stars: 5,
+      count: 55,
+    },
+  },
+];
+localStorage.setItem("wishlist", JSON.stringify(wishlist));
