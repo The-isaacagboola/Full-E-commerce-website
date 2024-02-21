@@ -2,14 +2,13 @@ import { products } from "./data/products.js";
 import { handleFlashsale } from "./data/flashsales.js";
 import { handleBestselling } from "./data/bestsellingProducts.js";
 import { cart, saveToLocal } from "./data/products.js";
-import { displayAdded, updateCartQuantity } from "./data/utils.js";
+import { displayAdded } from "./data/utils.js";
 
+document.querySelector(".js-cart-quantity").innerHTML = cart.length;
 let generalProductHTML = "";
 function handleGeneralProduct(product) {
   let html;
-
-  html = `
-  <div class="product-item">
+  html = `<div class="product-item">
   <div class="product-image">
     <div class="responsive-icons">
       <div class="wishlist-icon">
@@ -30,13 +29,12 @@ function handleGeneralProduct(product) {
     <img src="Images/rating/Five star.png" alt="five-star rating" />
     <span class="rating-count">(${product.rating.count})</span>
   </div>
-</div>
-  `;
+  </div>`;
   generalProductHTML += html;
   document.querySelector(".js-general-container").innerHTML =
     generalProductHTML;
 }
-updateCartQuantity();
+
 products.forEach((product) => {
   let generalProduct;
   let flashsaleProduct;
@@ -54,14 +52,12 @@ products.forEach((product) => {
 });
 
 const addtoCartButtons = document.querySelectorAll(".js-add-to-cart");
-console.log(addtoCartButtons);
 
 addtoCartButtons.forEach((button) => {
   button.addEventListener("click", () => {
     let productId;
-    console.log(button.dataset);
+
     productId = button.dataset.productid;
-    console.log(productId);
 
     let activeProduct;
     products.forEach((product) => {
@@ -75,8 +71,7 @@ addtoCartButtons.forEach((button) => {
     }
 
     saveToLocal();
-    updateCartQuantity();
-
+    document.querySelector(".js-cart-quantity").innerHTML = cart.length;
     displayAdded(button);
   });
 });

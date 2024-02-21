@@ -222,7 +222,6 @@ export const products = [
   },
 ];
 
-
 export let cart = JSON.parse(localStorage.getItem("cart")) || [
   {
     id: "f3",
@@ -254,6 +253,6 @@ export let cart = JSON.parse(localStorage.getItem("cart")) || [
 ];
 saveToLocal();
 
-export function saveToLocal(){
+export function saveToLocal() {
   localStorage.setItem("cart", JSON.stringify(cart));
-};
+}

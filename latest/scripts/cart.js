@@ -1,7 +1,10 @@
 import { cart } from "./data/products.js";
-import { updateCartQuantity } from "./data/utils.js";
+
+const wishlist = JSON.parse(localStorage.getItem("wishlist"));
+document.querySelector(".js-wishlist-quantity").innerHTML = wishlist.length;
+
 let cartHTML = "";
-export function updateCart() {
+function updateCart() {
   cart.forEach((item) => {
     let html;
     html = `
@@ -37,11 +40,15 @@ export function updateCart() {
     `;
     cartHTML += html;
     document.querySelector(".js-cart-item-container").innerHTML = cartHTML;
+    updateCartQuantity();
   });
-  updateCartQuantity();
 }
 updateCart();
 addSubtotals();
+
+export function updateCartQuantity() {
+  document.querySelector(".js-cart-quantity").innerHTML = cart.length;
+}
 
 function updateSubtotal() {
   const items = document.querySelectorAll(".js-cart-item");
@@ -87,27 +94,21 @@ function addSubtotals() {
   let subtotalAccumulator = 0;
 
   prices.forEach((price) => {
-    String(
-      (subtotalAccumulator += Number(price.innerHTML.split("$").join("")))
-    );
+    subtotalAccumulator += Number(price.innerHTML.split("$").join(""));
   });
 
   const subTotalAmount = (document.querySelector(
     ".js-subtotal-price"
-  ).innerHTML = `$${subtotalAccumulator}`);
+  ).innerHTML = `$${subtotalAccumulator.toLocaleString()}`);
 
   if (document.querySelector(".js-shipping-fee").innerHTML === "Free") {
     document.querySelector(".js-sumtotal").innerHTML = subTotalAmount;
   } else {
+    let shippingFee = Number(
+      document.querySelector(".js-shipping-fee").innerHTML.split("$").join("")
+    );
+
     document.querySelector(".js-sumtotal").innerHTML = `
-      $${
-        Number(subTotalAmount.split("$").join("")) +
-        Number(
-          document
-            .querySelector(".js-shipping-fee")
-            .innerHTML.split("$")
-            .join("")
-        )
-      }`;
+      $${(subtotalAccumulator + shippingFee).toLocaleString()}`;
   }
 }

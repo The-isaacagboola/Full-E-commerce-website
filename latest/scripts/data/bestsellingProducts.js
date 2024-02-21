@@ -25,10 +25,8 @@ export function handleBestselling(product) {
   <span class="rating-count">(${product.rating.count})</span>
 </div>`;
 
-  console.log(bestHtml);
-
   bestsellingHTML += bestHtml;
-
+  bestsellingHTML = bestsellingHTML.split("undefined").join("");
   document.querySelector(".js-bestselling-container").innerHTML =
     bestsellingHTML;
 }
