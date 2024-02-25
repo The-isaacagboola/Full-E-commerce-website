@@ -1,6 +1,5 @@
-import { cart } from "./data/products.js";
+import { cart, wishlist } from "./data/products.js";
 
-const wishlist = JSON.parse(localStorage.getItem("wishlist"));
 document.querySelector(".js-wishlist-quantity").innerHTML = wishlist.length;
 
 let cartHTML = "";
@@ -11,7 +10,7 @@ function updateCart() {
     <div class="cart-item js-cart-item" data-productId=${item.id}>
   <div class="image-name-container">
     <div class="cart-item-image">
-      <button data-productId=${item.id}>
+      <button class="js-cart-item-delete" data-productId=${item.id}>
         <svg
           width="24"
           height="24"
@@ -111,4 +110,19 @@ function addSubtotals() {
     document.querySelector(".js-sumtotal").innerHTML = `
       $${(subtotalAccumulator + shippingFee).toLocaleString()}`;
   }
+}
+
+const cartDeleteButtons = document.querySelectorAll(".js-cart-item-delete");
+cartDeleteButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    removeFromCart(button);
+  });
+});
+
+function removeFromCart(button) {
+  let buttonId = button.dataset.productid;
+  cart = cart.filter((product) => product.id !== buttonId);
+  console.log(cart);
+  const buttonContainer = button.closest(".js-cart-item");
+  buttonContainer.remove();
 }

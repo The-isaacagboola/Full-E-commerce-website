@@ -1,18 +1,21 @@
-import { cart } from "./data/products.js";
-import { products, saveToLocal, wishlist } from "./data/products.js";
+import { cart, wishlist } from "./data/products.js";
+import { products, saveToLocal } from "./data/products.js";
 import { displayAdded } from "./data/utils.js";
 
+let newWishlist = [...wishlist];
 function updateCartWishQuantity() {
   document.querySelector(".js-cart-quantity").innerHTML = cart.length;
-  document.querySelector(".js-wishlist-quantity").innerHTML = wishlist.length;
-  document.querySelector(".wishlist-number").innerHTML = wishlist.length;
+  document.querySelector(".js-wishlist-quantity").innerHTML =
+    newWishlist.length;
+  document.querySelector(".wishlist-number").innerHTML = newWishlist.length;
 }
 updateCartWishQuantity();
 
-let wishHTML;
-let itemHtml;
-wishlist.forEach((item) => {
-  itemHtml = `
+function renderWishList() {
+  let wishHTML;
+  let itemHtml;
+  newWishlist.forEach((item) => {
+    itemHtml = `
     <div class="product-item">
         <div class="product-image">
             <div class="flash-sale-number">-45%</div>
@@ -85,13 +88,13 @@ wishlist.forEach((item) => {
   <span class="rating-count">(65)</span>
 </div>
     `;
-  wishHTML += itemHtml;
-  wishHTML = wishHTML.split("undefined").join("");
-});
-function renderWIshList() {
+    wishHTML += itemHtml;
+    wishHTML = wishHTML.split("undefined").join("");
+  });
   document.querySelector(".js-wishlist-container").innerHTML = wishHTML;
+  addToCart();
 }
-renderWIshList();
+renderWishList();
 
 let justForYouObjects = [
   {
@@ -240,66 +243,49 @@ justForYouObjects.forEach((object) => {
   document.querySelector(".js-just-foryou").innerHTML = newJustHTML;
 });
 
-const addToCartButtons = document.querySelectorAll(".js-add-to-cart");
-addToCartButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    let itemId;
-    itemId = button.dataset.objectid;
+function addToCart() {
+  const addToCartButtons = document.querySelectorAll(".js-add-to-cart");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let itemId;
+      itemId = button.dataset.objectid;
 
-    let targetItem;
-    products.forEach((product) => {
-      if (product.id === itemId) {
-        targetItem = product;
+      let targetItem;
+      products.forEach((product) => {
+        if (product.id === itemId) {
+          targetItem = product;
+        }
+      });
+
+      if (!cart.some((product) => product.id === targetItem.id)) {
+        cart.push(targetItem);
+        updateCartWishQuantity();
+        saveToLocal();
       }
+      displayAdded(button);
     });
+  });
+}
 
-    if (!cart.some((product) => product.id === targetItem.id)) {
-      cart.push(targetItem);
-      updateCartWishQuantity();
-      saveToLocal();
-    }
-    displayAdded(button);
+document.querySelectorAll(".js-delete-icon").forEach((button) => {
+  button.addEventListener("click", () => {
+    removeItemUpdateWishlist(button);
   });
 });
-/*
-document.querySelector("body").addEventListener("click", (e) => {
-  if (e.target.closest(".js-delete-icon") !== null) {
-    const deleteContainer = e.target.closest(".js-delete-icon");
-    const deletedItemId = deleteContainer.dataset.productid;
+function removeItemUpdateWishlist(button) {
+  let buttonId = button.dataset.productid;
+  const updatedWishlist = newWishlist.filter(
+    (product) => product.id !== buttonId
+  );
+  newWishlist = [...updatedWishlist];
+  localStorage.setItem("wishlist", JSON.stringify(newWishlist));
+  console.log(newWishlist);
+  renderWishList();
+  updateCartWishQuantity();
 
-    wishlist.forEach((item, index) => {
-      if (item.id === deletedItemId) {
-        wishlist.splice(index, 1);
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        updateCartWishQuantity();
-
-        console.log(wishlist);
-        renderWIshList();
-      }
-      deleteContainer.remove();
+  document.querySelectorAll(".js-delete-icon").forEach((button) => {
+    button.addEventListener("click", () => {
+      removeItemUpdateWishlist(button);
     });
-  }
-});
-*/
-
-document.querySelector("body").addEventListener("click", (e) => {
-  if (e.target.closest(".js-delete-icon") !== null) {
-    const deleteContainer = e.target.closest(".js-delete-icon");
-    console.log(deleteContainer);
-    const deletedItemId = deleteContainer.dataset.productid;
-
-    wishlist.forEach((item, index) => {
-      if (item.id === deletedItemId) {
-        wishlist.splice(index, 1);
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        updateCartWishQuantity();
-        wishHTML.replace(deleteContainer, "");
-        console.log(wishlist);
-      }
-    });
-    // Remove the deleteContainer element from the DOM
-    deleteContainer.remove();
-  }
-
-  renderWIshList();
-});
+  });
+}
