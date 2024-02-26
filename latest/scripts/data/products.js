@@ -314,3 +314,5 @@ export let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [
   },
 ];
 localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+export let checklist = JSON.parse(localStorage.getItem("checklist")) || [];

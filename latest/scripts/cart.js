@@ -1,10 +1,11 @@
 import { cart, wishlist } from "./data/products.js";
-
-document.querySelector(".js-wishlist-quantity").innerHTML = wishlist.length;
+import { checklist } from "./data/products.js";
+let newCart = [...cart];
+let newChecklist = [...checklist];
 
 let cartHTML = "";
 function updateCart() {
-  cart.forEach((item) => {
+  newCart.forEach((item) => {
     let html;
     html = `
     <div class="cart-item js-cart-item" data-productId=${item.id}>
@@ -43,10 +44,13 @@ function updateCart() {
   });
 }
 updateCart();
+//continue from here... if cartHTML is empty.. classlist.add. display:auto to the empty cart diagram
+if(cartHTML = )
 addSubtotals();
 
 export function updateCartQuantity() {
-  document.querySelector(".js-cart-quantity").innerHTML = cart.length;
+  document.querySelector(".js-cart-quantity").innerHTML = newCart.length;
+  document.querySelector(".js-wishlist-quantity").innerHTML = wishlist.length;
 }
 
 function updateSubtotal() {
@@ -55,14 +59,14 @@ function updateSubtotal() {
   items.forEach((item) => {
     const itemId = item.dataset.productid;
     let matchingItem;
-    cart.forEach((product) => {
+    newCart.forEach((product) => {
       if (product.id === itemId) {
         matchingItem = product;
       }
     });
 
     if (Number(item.querySelector(".js-input-quantity").value) < 1) {
-      item.querySelector(".js-input-quantity").value = 0;
+      item.querySelector(".js-input-quantity").value = 1;
     }
 
     item.querySelector(".js-subtotal").innerHTML = `$${
@@ -74,7 +78,6 @@ function updateSubtotal() {
 
     inputs.forEach((input) => {
       let value = parseFloat(input.value);
-
       input.value = value.toFixed(0).padStart(2, "0");
     });
   });
@@ -121,8 +124,31 @@ cartDeleteButtons.forEach((button) => {
 
 function removeFromCart(button) {
   let buttonId = button.dataset.productid;
-  cart = cart.filter((product) => product.id !== buttonId);
-  console.log(cart);
+  newCart = newCart.filter((product) => product.id !== buttonId);
+  console.log(newCart);
+  localStorage.setItem("cart", JSON.stringify(newCart));
   const buttonContainer = button.closest(".js-cart-item");
   buttonContainer.remove();
+  updateCartQuantity();
 }
+
+function updateChecklist() {
+  newChecklist = [];
+  const cartContainers = document.querySelectorAll(".js-cart-item");
+
+  cartContainers.forEach((container) => {
+    let itemId = container.dataset.productid;
+    newChecklist.push({
+      id: itemId,
+      Amount: Number(
+        container.querySelector(".js-subtotal").innerHTML.split("$").join("")
+      ),
+    });
+    localStorage.setItem("checklist", JSON.stringify(newChecklist));
+  });
+  console.log(newChecklist);
+}
+const checkoutButton = document.querySelector(".js-checkout-button");
+checkoutButton.addEventListener("click", () => {
+  updateChecklist();
+});

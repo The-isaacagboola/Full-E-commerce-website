@@ -155,9 +155,10 @@ let justForYouObjects = [
   },
 ];
 
-let justHTML;
-justForYouObjects.forEach((object) => {
-  let objectHtml = `
+function renderJustForYou() {
+  let justHTML;
+  justForYouObjects.forEach((object) => {
+    let objectHtml = `
     <div class="product-item">
     <div class="product-image">
         <div class="flash-sale-number">-45%</div>
@@ -237,11 +238,14 @@ justForYouObjects.forEach((object) => {
   <img src="Images/rating/Five star.png" alt="five-star rating" />
   <span class="rating-count">(${object.rating.count})</span>
 </div>`;
-  justHTML += objectHtml;
-  let newJustHTML;
-  newJustHTML = justHTML.split("undefined").join("");
-  document.querySelector(".js-just-foryou").innerHTML = newJustHTML;
-});
+    justHTML += objectHtml;
+    let newJustHTML;
+    newJustHTML = justHTML.split("undefined").join("");
+    document.querySelector(".js-just-foryou").innerHTML = newJustHTML;
+    addToCart();
+  });
+}
+renderJustForYou();
 
 function addToCart() {
   const addToCartButtons = document.querySelectorAll(".js-add-to-cart");
