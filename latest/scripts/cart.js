@@ -41,11 +41,21 @@ function updateCart() {
     cartHTML += html;
     document.querySelector(".js-cart-item-container").innerHTML = cartHTML;
     updateCartQuantity();
+    if (cartHTML === "") {
+      const imageBox = document.querySelector(".empty-cart-image");
+      imageBox.classList.add("display");
+    }
   });
 }
 updateCart();
-//continue from here... if cartHTML is empty.. classlist.add. display:auto to the empty cart diagram
-if(cartHTML = )
+function checkIfEmpty() {
+  if (newCart.length === 0) {
+    const imageBox = document.querySelector(".empty-cart-image");
+    imageBox.classList.add("display");
+  }
+}
+checkIfEmpty();
+
 addSubtotals();
 
 export function updateCartQuantity() {
@@ -130,6 +140,7 @@ function removeFromCart(button) {
   const buttonContainer = button.closest(".js-cart-item");
   buttonContainer.remove();
   updateCartQuantity();
+  checkIfEmpty();
 }
 
 function updateChecklist() {

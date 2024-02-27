@@ -123,3 +123,15 @@
   display: flex;
   justify-content: center;
 }
+.empty-cart-image {
+  display: none;
+  width: 100%;
+  justify-content: center;
+}
+.empty-cart-image svg {
+  width: 500px;
+  height: 500px;
+}
+.empty-cart-image.display {
+  display: flex;
+}
