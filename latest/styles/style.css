@@ -433,8 +433,19 @@
   display: inline-block;
   width: fit-content;
 }
-.arrival-item .arrival-text-container .shopnow-link:hover {
+a.shopnow-link:hover,
+#shopnow-links .arrival-text-container .shopnow-link:hover {
   border-bottom: 1px solid var(--clr-secondary-ash);
+  cursor: pointer;
+}
+#shopnow-links a button {
+  border: none;
+  background: transparent;
+  color: var(--clr-primary-white);
+}
+#shopnow-links a button:hover {
+  border-bottom: 1px solid var(--clr-secondary-ash);
+  cursor: pointer;
 }
 .third-text,
 .fourth-text {
@@ -491,4 +502,6 @@
   align-items: center;
 }
 
-/* FOOTER */
+/* MEDIA QUERIES */
+@media (min-width: 1200px) {
+}
