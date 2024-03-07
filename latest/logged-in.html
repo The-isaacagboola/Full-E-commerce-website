@@ -31,6 +31,20 @@
 
     <!-- NAVIGATION -->
     <nav class="nav-container">
+      <div class="nav-dropdown">
+        <div class="dropdown-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-items">
+          <li><a href="#">Home</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./sign-up.html">Sign Up</a></li>
+        </ul>
+      </div>
+
       <a href="">
         <div class="exclusive-logo">
           <img src="Images/Logo.png" alt="exclusive-logo" />
@@ -181,330 +195,334 @@
       </div>
     </section>
 
-    <!-- FLASH SALES SECTION -->
-    <section class="generic-section">
-      <div class="red-container">
-        <div class="rectangle-element"></div>
-        <p>Today's</p>
-      </div>
+    <div class="content-wrapper">
+      <!-- FLASH SALES SECTION -->
+      <section class="generic-section">
+        <div class="red-container">
+          <div class="rectangle-element"></div>
+          <p>Today's</p>
+        </div>
 
-      <div class="heading-container">
-        <p class="section-heading">Flash Sales</p>
-        <div class="timer-container">
-          <div>
-            <p class="time-days">Days</p>
-            <p class="time-number">03</p>
-          </div>
+        <div class="heading-container">
+          <p class="section-heading">Flash Sales</p>
+          <div class="timer-container">
+            <div>
+              <p class="time-days">Days</p>
+              <p class="time-number">03</p>
+            </div>
 
-          <div class="time-colons">:</div>
-          <div>
-            <p class="time-days">Hours</p>
-            <p class="time-number">03</p>
+            <div class="time-colons">:</div>
+            <div>
+              <p class="time-days">Hours</p>
+              <p class="time-number">03</p>
+            </div>
+            <div class="time-colons">:</div>
+            <div>
+              <p class="time-days">Minutes</p>
+              <p class="time-number">03</p>
+            </div>
+            <div class="time-colons">:</div>
+            <div>
+              <p class="time-days">Seconds</p>
+              <p class="time-number">03</p>
+            </div>
           </div>
-          <div class="time-colons">:</div>
-          <div>
-            <p class="time-days">Minutes</p>
-            <p class="time-number">03</p>
-          </div>
-          <div class="time-colons">:</div>
-          <div>
-            <p class="time-days">Seconds</p>
-            <p class="time-number">03</p>
+          <div class="joint-arrow-section">
+            <button class="arrow-btn">
+              <img src="Images/icons/icons_arrow-left.png" alt="left-arrow" />
+            </button>
+            <button class="arrow-btn">
+              <img src="Images/icons/icons arrow-right.png" alt="right-arrow" />
+            </button>
           </div>
         </div>
-        <div class="joint-arrow-section">
-          <button class="arrow-btn">
-            <img src="Images/icons/icons_arrow-left.png" alt="left-arrow" />
-          </button>
-          <button class="arrow-btn">
-            <img src="Images/icons/icons arrow-right.png" alt="right-arrow" />
-          </button>
-        </div>
-      </div>
 
-      <div class="products-container js-flashsale-container"></div>
-      <div class="button-flex-parent upper-gap">
-        <button class="view-all-btn">View All Products</button>
-      </div>
-    </section>
-
-    <div class="horizontal-seperator"></div>
-
-    <!-- CATEGORY SECTION -->
-    <section class="generic-section">
-      <div class="red-container">
-        <div class="rectangle-element"></div>
-        <p>Categories</p>
-      </div>
-
-      <div class="heading-container">
-        <p class="section-heading">Browse By Category</p>
-
-        <div class="joint-arrow-section">
-          <button class="arrow-btn">
-            <img src="Images/icons/icons_arrow-left.png" alt="left-arrow" />
-          </button>
-          <button class="arrow-btn">
-            <img src="Images/icons/icons arrow-right.png" alt="right-arrow" />
-          </button>
-        </div>
-      </div>
-
-      <div class="category-container">
-        <ul id="category-list">
-          <li>
-            <div class="category-div">
-              <img
-                src="Images/categories/Category-CellPhone.svg"
-                alt="phone-category"
-              />
-              <p class="category-name">Phones</p>
-            </div>
-          </li>
-          <li>
-            <div class="category-div">
-              <img
-                src="Images/categories/Category-Computer.svg"
-                alt="computer-category"
-              />
-              <p class="category-name">Computers</p>
-            </div>
-          </li>
-          <li>
-            <div class="category-div">
-              <img
-                src="images/categories/Category-SmartWatch.svg"
-                alt="smart-watch categories"
-              />
-              <p class="category-name">SmartWatch</p>
-            </div>
-          </li>
-          <li>
-            <div class="category-div">
-              <img src="Images/categories/Category-Camera.svg" alt="cameras" />
-              <p class="category-name">Cameras</p>
-            </div>
-          </li>
-          <li>
-            <div class="category-div">
-              <img
-                src="Images/categories/Category-Headphone.svg"
-                alt="Headphones"
-              />
-              <p class="category-name">HeadPhones</p>
-            </div>
-          </li>
-          <li>
-            <div class="category-div">
-              <img
-                src="Images/categories/Category-Gamepad.svg"
-                alt="Gaming Equipments"
-              />
-              <p class="category-name">Gaming</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="horizontal-seperator top-marg"></div>
-
-    <!-- BEST SELLING SECTION -->
-    <section class="generic-section">
-      <div class="red-container">
-        <div class="rectangle-element"></div>
-        <p>This Month</p>
-      </div>
-
-      <div class="heading-container">
-        <p class="section-heading">Best Selling Products</p>
-        <div class="button-flex-parent">
+        <div class="products-container js-flashsale-container"></div>
+        <div class="button-flex-parent upper-gap">
           <button class="view-all-btn">View All Products</button>
         </div>
-      </div>
+      </section>
 
-      <div class="products-container js-bestselling-container"></div>
+      <div class="horizontal-seperator"></div>
 
-      <div class="make-flex">
-        <div class="text-box">
-          <p class="green-text">Categories</p>
-          <p class="music-experience">Enhance Your Music Experience</p>
-          <div class="timer-container">
-            <div class="white-circle">
-              <p class="time-number">03</p>
-              <p class="time-days">Days</p>
+      <!-- CATEGORY SECTION -->
+      <section class="generic-section">
+        <div class="red-container">
+          <div class="rectangle-element"></div>
+          <p>Categories</p>
+        </div>
+
+        <div class="heading-container">
+          <p class="section-heading">Browse By Category</p>
+
+          <div class="joint-arrow-section">
+            <button class="arrow-btn">
+              <img src="Images/icons/icons_arrow-left.png" alt="left-arrow" />
+            </button>
+            <button class="arrow-btn">
+              <img src="Images/icons/icons arrow-right.png" alt="right-arrow" />
+            </button>
+          </div>
+        </div>
+
+        <div class="category-container">
+          <ul id="category-list">
+            <li>
+              <div class="category-div">
+                <img
+                  src="Images/categories/Category-CellPhone.svg"
+                  alt="phone-category"
+                />
+                <p class="category-name">Phones</p>
+              </div>
+            </li>
+            <li>
+              <div class="category-div">
+                <img
+                  src="Images/categories/Category-Computer.svg"
+                  alt="computer-category"
+                />
+                <p class="category-name">Computers</p>
+              </div>
+            </li>
+            <li>
+              <div class="category-div">
+                <img
+                  src="images/categories/Category-SmartWatch.svg"
+                  alt="smart-watch categories"
+                />
+                <p class="category-name">SmartWatch</p>
+              </div>
+            </li>
+            <li>
+              <div class="category-div">
+                <img
+                  src="Images/categories/Category-Camera.svg"
+                  alt="cameras"
+                />
+                <p class="category-name">Cameras</p>
+              </div>
+            </li>
+            <li>
+              <div class="category-div">
+                <img
+                  src="Images/categories/Category-Headphone.svg"
+                  alt="Headphones"
+                />
+                <p class="category-name">HeadPhones</p>
+              </div>
+            </li>
+            <li>
+              <div class="category-div">
+                <img
+                  src="Images/categories/Category-Gamepad.svg"
+                  alt="Gaming Equipments"
+                />
+                <p class="category-name">Gaming</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="horizontal-seperator top-marg"></div>
+
+      <!-- BEST SELLING SECTION -->
+      <section class="generic-section">
+        <div class="red-container">
+          <div class="rectangle-element"></div>
+          <p>This Month</p>
+        </div>
+
+        <div class="heading-container">
+          <p class="section-heading">Best Selling Products</p>
+          <div class="button-flex-parent">
+            <button class="view-all-btn">View All Products</button>
+          </div>
+        </div>
+
+        <div class="products-container js-bestselling-container"></div>
+
+        <div class="make-flex">
+          <div class="text-box">
+            <p class="green-text">Categories</p>
+            <p class="music-experience">Enhance Your Music Experience</p>
+            <div class="timer-container">
+              <div class="white-circle">
+                <p class="time-number">03</p>
+                <p class="time-days">Days</p>
+              </div>
+
+              <div class="white-circle">
+                <p class="time-number">03</p>
+                <p class="time-days">Hours</p>
+              </div>
+
+              <div class="white-circle">
+                <p class="time-number">03</p>
+                <p class="time-days">Minutes</p>
+              </div>
+
+              <div class="white-circle">
+                <p class="time-number">03</p>
+                <p class="time-days">Seconds</p>
+              </div>
             </div>
+            <button class="green-buy-btn">Buy Now!</button>
+          </div>
+          <div class="jam-box">
+            <img
+              src="Images/products/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
+              alt="jbl-boombox"
+            />
+            <img
+              class="ellipse"
+              src="Images/Ellipse 23.png"
+              alt="background-image"
+            />
+          </div>
+        </div>
+      </section>
 
-            <div class="white-circle">
-              <p class="time-number">03</p>
-              <p class="time-days">Hours</p>
-            </div>
+      <!-- PRODUCT EXPLORATION SECTION -->
+      <section class="generic-section">
+        <div class="red-container">
+          <div class="rectangle-element"></div>
+          <p>Our Products</p>
+        </div>
 
-            <div class="white-circle">
-              <p class="time-number">03</p>
-              <p class="time-days">Minutes</p>
-            </div>
+        <div class="heading-container">
+          <p class="section-heading">Explore Our Products</p>
 
-            <div class="white-circle">
-              <p class="time-number">03</p>
-              <p class="time-days">Seconds</p>
+          <div class="joint-arrow-section">
+            <button class="arrow-btn">
+              <img src="Images/icons/icons_arrow-left.png" alt="left-arrow" />
+            </button>
+            <button class="arrow-btn">
+              <img src="Images/icons/icons arrow-right.png" alt="left-arrow" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="productscenter"
+          class="products-container js-general-container"
+        ></div>
+
+        <div class="button-flex-parent upper-gap">
+          <button class="view-all-btn">View All Products</button>
+        </div>
+      </section>
+
+      <!-- NEW ARRIVAL SECTION -->
+      <section class="generic-section">
+        <div class="red-container">
+          <div class="rectangle-element"></div>
+          <p>Featured</p>
+        </div>
+
+        <div class="heading-container">
+          <p class="section-heading">New Arrival</p>
+        </div>
+
+        <div class="grid-arrival-container" id="shopnow-links">
+          <div class="arrival-item first">
+            <img
+              src="Images/new arrivals/ps5-slim-goedkope-playstation_large 1 (1).png"
+              alt="play station 5"
+            />
+            <div class="arrival-text-container">
+              <p class="arrival-item-name">PlayStation 5</p>
+              <p class="arrival-item-desc">
+                Black and White version of the PS5 coming out on sale.
+              </p>
+              <a class="shopnow-link" href="#">
+                <button>Shop Now</button>
+              </a>
             </div>
           </div>
-          <button class="green-buy-btn">Buy Now!</button>
-        </div>
-        <div class="jam-box">
-          <img
-            src="Images/products/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
-            alt="jbl-boombox"
-          />
-          <img
-            class="ellipse"
-            src="Images/Ellipse 23.png"
-            alt="background-image"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- PRODUCT EXPLORATION SECTION -->
-    <section class="generic-section">
-      <div class="red-container">
-        <div class="rectangle-element"></div>
-        <p>Our Products</p>
-      </div>
-
-      <div class="heading-container">
-        <p class="section-heading">Explore Our Products</p>
-
-        <div class="joint-arrow-section">
-          <button class="arrow-btn">
-            <img src="Images/icons/icons_arrow-left.png" alt="left-arrow" />
-          </button>
-          <button class="arrow-btn">
-            <img src="Images/icons/icons arrow-right.png" alt="left-arrow" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        id="productscenter"
-        class="products-container js-general-container"
-      ></div>
-
-      <div class="button-flex-parent upper-gap">
-        <button class="view-all-btn">View All Products</button>
-      </div>
-    </section>
-
-    <!-- NEW ARRIVAL SECTION -->
-    <section class="generic-section">
-      <div class="red-container">
-        <div class="rectangle-element"></div>
-        <p>Featured</p>
-      </div>
-
-      <div class="heading-container">
-        <p class="section-heading">New Arrival</p>
-      </div>
-
-      <div class="grid-arrival-container" id="shopnow-links">
-        <div class="arrival-item first">
-          <img
-            src="Images/new arrivals/ps5-slim-goedkope-playstation_large 1 (1).png"
-            alt="play station 5"
-          />
-          <div class="arrival-text-container">
-            <p class="arrival-item-name">PlayStation 5</p>
-            <p class="arrival-item-desc">
-              Black and White version of the PS5 coming out on sale.
+          <div class="arrival-item second">
+            <img
+              src="Images/new arrivals/attractive-woman-wearing-hat-posing-black-background 1.png"
+              alt="attractive-woman-wearing-hat"
+            />
+            <p class="arrival-text-container">
+              <span class="arrival-item-name"> Women’s Collections </span>
+              <span class="arrival-item-desc">
+                Featured woman collections that give you another vibe.
+              </span>
+              <a class="shopnow-link" href="#"><button>Shop Now</button></a>
             </p>
-            <a class="shopnow-link" href="#">
-              <button>Shop Now</button>
-            </a>
+          </div>
+          <div class="arrival-item third">
+            <img
+              class="bottom-fix3"
+              src="Images/new arrivals/69-694768_amazon-echo-png-clipart-transparent-amazon-echo-png 1.png"
+              alt="amazon wireless speakers"
+            />
+            <img class="bg-ecclipse" src="Images/Ellipse 24.png" alt="" />
+            <p class="arrival-text-container third-text">
+              <span class="arrival-item-name"> Speakers </span>
+              <span class="arrival-item-desc"> Amazon wireless speakers </span>
+              <a class="shopnow-link" href="#"><button>Shop Now</button> </a>
+            </p>
+          </div>
+          <div class="arrival-item fourth">
+            <img
+              class="bottom-fix4"
+              src="Images/new arrivals/652e82cd70aa6522dd785109a455904c (1).png"
+              alt=""
+            />
+            <img class="bg-ecclipse" src="Images/Ellipse 24.png" alt="" />
+            <p class="arrival-text-container fourth-text">
+              <span class="arrival-item-name"> Perfume </span>
+              <span class="arrival-item-desc"> GUCCI INTENSE OUD EDP </span>
+              <a class="shopnow-link" href="#"><button>Shop Now</button></a>
+            </p>
           </div>
         </div>
-        <div class="arrival-item second">
-          <img
-            src="Images/new arrivals/attractive-woman-wearing-hat-posing-black-background 1.png"
-            alt="attractive-woman-wearing-hat"
-          />
-          <p class="arrival-text-container">
-            <span class="arrival-item-name"> Women’s Collections </span>
-            <span class="arrival-item-desc">
-              Featured woman collections that give you another vibe.
-            </span>
-            <a class="shopnow-link" href="#"><button>Shop Now</button></a>
-          </p>
-        </div>
-        <div class="arrival-item third">
-          <img
-            class="bottom-fix3"
-            src="Images/new arrivals/69-694768_amazon-echo-png-clipart-transparent-amazon-echo-png 1.png"
-            alt="amazon wireless speakers"
-          />
-          <img class="bg-ecclipse" src="Images/Ellipse 24.png" alt="" />
-          <p class="arrival-text-container third-text">
-            <span class="arrival-item-name"> Speakers </span>
-            <span class="arrival-item-desc"> Amazon wireless speakers </span>
-            <a class="shopnow-link" href="#"><button>Shop Now</button> </a>
-          </p>
-        </div>
-        <div class="arrival-item fourth">
-          <img
-            class="bottom-fix4"
-            src="Images/new arrivals/652e82cd70aa6522dd785109a455904c (1).png"
-            alt=""
-          />
-          <img class="bg-ecclipse" src="Images/Ellipse 24.png" alt="" />
-          <p class="arrival-text-container fourth-text">
-            <span class="arrival-item-name"> Perfume </span>
-            <span class="arrival-item-desc"> GUCCI INTENSE OUD EDP </span>
-            <a class="shopnow-link" href="#"><button>Shop Now</button></a>
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SERVICES SECTION -->
-    <section>
-      <div class="services-flex">
-        <div class="service-item">
-          <img
-            src="Images/services/Services (4).png"
-            alt="free-fast-delivery-icon"
-          />
-          <p class="service-text">
-            <span class="service-name"> FREE AND FAST DELIVERY </span>
-            <span class="service-desc">
-              Free delivery for all orders over $140
-            </span>
-          </p>
-        </div>
+      <!-- SERVICES SECTION -->
+      <section>
+        <div class="services-flex">
+          <div class="service-item">
+            <img
+              src="Images/services/Services (4).png"
+              alt="free-fast-delivery-icon"
+            />
+            <p class="service-text">
+              <span class="service-name"> FREE AND FAST DELIVERY </span>
+              <span class="service-desc">
+                Free delivery for all orders over $140
+              </span>
+            </p>
+          </div>
 
-        <div class="service-item">
-          <img
-            src="Images/services/Services (5).png"
-            alt="free-fast-delivery-icon"
-          />
-          <p class="service-text">
-            <span class="service-name"> 24/7 CUSTOMER SERVICE </span>
-            <span class="service-desc"> Friendly 24/7 customer support </span>
-          </p>
-        </div>
+          <div class="service-item">
+            <img
+              src="Images/services/Services (5).png"
+              alt="free-fast-delivery-icon"
+            />
+            <p class="service-text">
+              <span class="service-name"> 24/7 CUSTOMER SERVICE </span>
+              <span class="service-desc"> Friendly 24/7 customer support </span>
+            </p>
+          </div>
 
-        <div class="service-item">
-          <img
-            src="Images/services/Services (6).png"
-            alt="free-fast-delivery-icon"
-          />
-          <p class="service-text">
-            <span class="service-name"> MONEY BACK GUARANTEE </span>
-            <span class="service-desc"> We return money within 30 days </span>
-          </p>
+          <div class="service-item">
+            <img
+              src="Images/services/Services (6).png"
+              alt="free-fast-delivery-icon"
+            />
+            <p class="service-text">
+              <span class="service-name"> MONEY BACK GUARANTEE </span>
+              <span class="service-desc"> We return money within 30 days </span>
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
+    </div>
     <!-- FOOTER -->
     <footer>
       <div class="footer-container">
@@ -619,6 +637,7 @@
         <p><small> &copy; 2024 Isaac Agboola. All rights reserved.</small></p>
       </div>
     </footer>
+
     <script src="./scripts/shared.js"></script>
     <script type="module" src="scripts/main.js"></script>
   </body>

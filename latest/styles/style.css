@@ -503,5 +503,63 @@ a.shopnow-link:hover,
 }
 
 /* MEDIA QUERIES */
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
+  body {
+    background: rebeccapurple;
+  }
+  nav,
+  .content-wrapper {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .search-container {
+    width: 12rem;
+  }
+  .category-left {
+    padding-left: 25px;
+  }
+  .phone-container {
+    width: auto;
+    padding: 25px 0 25px 25px;
+    margin-right: 25px;
+  }
+  .phone-container > img {
+    transform: translateX(-5px);
+  }
+  .i-phone-details {
+    min-width: 180px;
+  }
+  .i-phone-details p {
+    font-size: 2.6rem;
+    padding-left: 20px;
+  }
+
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #category-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+  .make-flex {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 885px) {
+  body {
+    background-color: red;
+  }
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .nav-container ul {
+    display: none;
+  }
+  #category-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
 }

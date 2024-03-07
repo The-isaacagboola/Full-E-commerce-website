@@ -195,3 +195,6 @@ nav a {
   width: 24px;
   height: 24px;
 }
+.nav-dropdown {
+  display: none;
+}
